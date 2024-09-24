@@ -13,6 +13,9 @@ header:
 excerpt1: "**코드스토브는 사람을 도우며, 자연을 보호하는데 필요한**"
 excerpt2: "**최고의 IT 솔루션을 제공하는 것을 목표로 합니다.**"
 
+advertisement:
+    - image-url: "/assets/images/iot-advertise-1.png"
+    - image-url: "/assets/images/iot-advertise-2.png"
 
 
 gallery:
@@ -209,8 +212,9 @@ image-text-row-two:
 
 <section class="site-section" id="iot-business">
   <div style="display: flex; justify-content: space-between;">
-    <img src="/assets/images/iot-advertise-1.png" alt="IoT 광고 이미지" style="width: 50%;">
-    <img src="/assets/images/iot-advertise-2.png" alt="IoT 광고 이미지" style="width: 50%;">
+    {% for ad in advertisement %}
+      <img src="{{ad.image-url}}" alt="IoT 광고 이미지" style="width: 50%">
+    {% endfor %}
   </div>
     <!-- <h1>This is OneFlow Jekyll Theme. Section 3</h1>
 

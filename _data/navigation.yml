@@ -1,0 +1,18 @@
+# main links
+main:
+  - title: "Enterprise Software"
+    url: /#enterprise-software
+    blank: false
+    description: "엔터프라이즈 소프트웨어 설계와 개발"
+  - title: "AIoT"
+    url: /#aiot
+    blank: false
+    description: "인공지능과 사물인터넷 기술"
+  - title: "IoT Business"
+    url: /#iot-business
+    blank: false
+    description: "소규모대기배출시설 측정기기"
+  - title: "Contact Us"
+    url: /#contact-us
+    blank: false
+    description: "문의하기"

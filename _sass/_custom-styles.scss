@@ -557,6 +557,31 @@ hr.section-sep {
   font-weight: 700;
 }
 
+/* ── 설치 현황 통계 ── */
+.install-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-top: 0.8rem;
+}
+
+.install-stats span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.78em;
+  font-weight: 700;
+  color: #1a7abf;
+  background: #e8f5ff;
+  padding: 0.25rem 0.75rem;
+  border-radius: 50px;
+  border: 1px solid #b3d9f5;
+}
+
+.install-stats span i {
+  font-size: 0.9em;
+}
+
 /* ── 기술 태그 ── */
 .tech-tags {
   display: flex;

@@ -317,3 +317,390 @@ hr.section-sep {
     text-align: center;
   }
 }
+
+/* ==========================================================================
+   Portfolio Timeline Page
+   ========================================================================== */
+
+.portfolio-page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 4rem;
+}
+
+.portfolio-intro {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.portfolio-intro h1 {
+  font-size: 2.2em;
+  color: #2c3e50;
+  margin-bottom: 0.8rem;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 1rem;
+}
+
+.portfolio-intro h1::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #3b9cba, #6f42c1);
+  border-radius: 2px;
+}
+
+.portfolio-intro p {
+  color: #5a6c7d;
+  font-size: 1.1em;
+  margin-top: 1.2rem;
+}
+
+/* ── 필터 버튼 ── */
+.portfolio-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  justify-content: center;
+  margin-bottom: 3rem;
+}
+
+.filter-btn {
+  padding: 0.5rem 1.3rem;
+  border: 2px solid #3b9cba;
+  background: transparent;
+  color: #3b9cba;
+  border-radius: 50px;
+  font-size: 0.9em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  background: #3b9cba;
+  color: #fff;
+}
+
+/* ── 타임라인 컨테이너 ── */
+.timeline {
+  position: relative;
+  padding: 1rem 0 2rem;
+}
+
+/* 중앙 세로선 */
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(to bottom, #3b9cba, #6f42c1);
+  transform: translateX(-50%);
+  border-radius: 2px;
+}
+
+/* ── 연도 마커 ── */
+.timeline-year-marker {
+  position: relative;
+  text-align: center;
+  margin: 2.5rem 0 1.5rem;
+  z-index: 2;
+}
+
+.timeline-year-marker span {
+  display: inline-block;
+  background: linear-gradient(135deg, #3b9cba 0%, #6f42c1 100%);
+  color: #fff;
+  font-size: 1.2em;
+  font-weight: 800;
+  padding: 0.4rem 1.8rem;
+  border-radius: 50px;
+  box-shadow: 0 4px 14px rgba(59, 156, 186, 0.4);
+  letter-spacing: 2px;
+}
+
+/* ── 타임라인 아이템 (기본: 데스크탑 좌우 교대) ── */
+.timeline-item {
+  position: relative;
+  width: calc(50% - 2.5rem);
+  margin-bottom: 2rem;
+  opacity: 0;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.timeline-item.visible {
+  opacity: 1;
+  transform: none !important;
+}
+
+.timeline-item.left {
+  margin-left: 0;
+  margin-right: auto;
+  transform: translateX(-30px);
+}
+
+.timeline-item.right {
+  margin-left: auto;
+  margin-right: 0;
+  transform: translateX(30px);
+}
+
+/* ── 타임라인 점 (중앙 선 위) ── */
+.timeline-dot {
+  position: absolute;
+  top: 1.2rem;
+  width: 46px;
+  height: 46px;
+  background: linear-gradient(135deg, #3b9cba 0%, #6f42c1 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 1.1rem;
+  box-shadow: 0 4px 12px rgba(59, 156, 186, 0.4);
+  z-index: 2;
+}
+
+.timeline-item.left .timeline-dot {
+  right: -3.4rem;
+}
+
+.timeline-item.right .timeline-dot {
+  left: -3.4rem;
+}
+
+/* ── 카드 ── */
+.timeline-card {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 1.6rem 1.8rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  border-left: 4px solid #3b9cba;
+  transition: all 0.3s ease;
+}
+
+.timeline-item.right .timeline-card {
+  border-left: none;
+  border-right: 4px solid #6f42c1;
+}
+
+.timeline-card:hover {
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.13);
+  transform: translateY(-4px);
+}
+
+.timeline-card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-bottom: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.timeline-card h3 {
+  color: #2c3e50;
+  font-size: 1.1em;
+  font-weight: 700;
+  margin: 0 0 0.6rem;
+  line-height: 1.4;
+}
+
+.timeline-card p {
+  color: #5a6c7d;
+  font-size: 0.9em;
+  line-height: 1.7;
+  margin: 0 0 1rem;
+}
+
+/* ── 배지 ── */
+.category-badge {
+  display: inline-block;
+  padding: 0.2rem 0.8rem;
+  border-radius: 50px;
+  font-size: 0.72em;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.category-badge.iot      { background: #e8f5ff; color: #1a7abf; }
+.category-badge.web      { background: #eef7ee; color: #2a8a3a; }
+.category-badge.platform { background: #f3ecff; color: #6f42c1; }
+.category-badge.marketing { background: #fff3e0; color: #e07b00; }
+
+.timeline-client {
+  font-size: 0.78em;
+  color: #7a8288;
+  font-weight: 600;
+}
+
+.timeline-client i {
+  margin-right: 0.3rem;
+  color: #3b9cba;
+}
+
+.pjt-phase {
+  display: inline-block;
+  padding: 0.15rem 0.6rem;
+  background: #ffeeba;
+  color: #856404;
+  border-radius: 4px;
+  font-size: 0.72em;
+  font-weight: 700;
+}
+
+/* ── 기술 태그 ── */
+.tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.tech-tags span {
+  display: inline-block;
+  padding: 0.2rem 0.65rem;
+  background: #f0f4f8;
+  color: #4a5568;
+  border-radius: 4px;
+  font-size: 0.72em;
+  font-weight: 600;
+  border: 1px solid #e2e8f0;
+}
+
+/* ── 통계 섹션 ── */
+.portfolio-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin: 4rem 0 3rem;
+  text-align: center;
+}
+
+.stat-card {
+  background: linear-gradient(135deg, #3b9cba 0%, #6f42c1 100%);
+  border-radius: 14px;
+  padding: 2rem 1rem;
+  color: #fff;
+  box-shadow: 0 6px 20px rgba(59, 156, 186, 0.25);
+  opacity: 0;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  transform: translateY(20px);
+}
+
+.stat-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.stat-number {
+  display: block;
+  font-size: 2.5em;
+  font-weight: 800;
+  margin-bottom: 0.3rem;
+}
+
+.stat-label {
+  font-size: 0.85em;
+  opacity: 0.9;
+  font-weight: 600;
+}
+
+/* ── CTA ── */
+.portfolio-cta {
+  text-align: center;
+  padding: 3rem 2rem;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-radius: 16px;
+  margin-top: 1rem;
+}
+
+.portfolio-cta h2 {
+  color: #2c3e50;
+  font-size: 1.6em;
+  margin-bottom: 0.8rem;
+}
+
+.portfolio-cta p {
+  color: #5a6c7d;
+  margin-bottom: 1.8rem;
+  font-size: 1em;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 0.85rem 2.5rem;
+  background: linear-gradient(135deg, #3b9cba 0%, #6f42c1 100%);
+  color: #fff !important;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 1em;
+  text-decoration: none;
+  box-shadow: 0 6px 20px rgba(59, 156, 186, 0.35);
+  transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+  box-shadow: 0 10px 28px rgba(59, 156, 186, 0.5);
+  transform: translateY(-3px);
+}
+
+.cta-button i {
+  margin-left: 0.5rem;
+}
+
+/* ── 반응형: 태블릿 이하 ── */
+@media (max-width: 900px) {
+  .portfolio-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 700px) {
+  .timeline::before {
+    left: 1.4rem;
+  }
+
+  .timeline-item {
+    width: calc(100% - 3.5rem);
+    margin-left: 3.5rem !important;
+    margin-right: 0 !important;
+    transform: translateX(20px);
+  }
+
+  .timeline-item.left .timeline-dot,
+  .timeline-item.right .timeline-dot {
+    left: -3.1rem;
+    right: auto;
+  }
+
+  .timeline-item.right .timeline-card {
+    border-left: 4px solid #6f42c1;
+    border-right: none;
+  }
+
+  .portfolio-stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .stat-number {
+    font-size: 2em;
+  }
+}
+
+@media (max-width: 480px) {
+  .portfolio-stats {
+    grid-template-columns: 1fr 1fr;
+  }
+  .portfolio-intro h1 {
+    font-size: 1.7em;
+  }
+}

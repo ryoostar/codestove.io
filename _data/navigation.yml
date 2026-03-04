@@ -12,6 +12,10 @@ main:
     url: /#iot-business
     blank: false
     description: "소규모대기배출시설 측정기기"
+  - title: "Portfolio"
+    url: /portfolio/
+    blank: false
+    description: "프로젝트 포트폴리오"
   - title: "Contact Us"
     url: /#contact-us
     blank: false

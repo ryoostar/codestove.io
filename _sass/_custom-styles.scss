@@ -429,7 +429,7 @@ hr.section-sep {
 /* ── 타임라인 아이템 (기본: 데스크탑 좌우 교대) ── */
 .timeline-item {
   position: relative;
-  width: calc(50% - 2.5rem);
+  width: calc(55% - 2.5rem);
   margin-bottom: 2rem;
   opacity: 0;
   transition: opacity 0.5s ease, transform 0.5s ease;
@@ -518,6 +518,7 @@ hr.section-sep {
   font-size: 0.9em;
   line-height: 1.7;
   margin: 0 0 1rem;
+  text-align: left;
 }
 
 /* ── 배지 ── */
@@ -679,6 +680,26 @@ hr.section-sep {
 
 .cta-button i {
   margin-left: 0.5rem;
+}
+
+/* ── IoT 광고 이미지 그리드 ── */
+.iot-advertise-grid {
+  display: flex;
+  gap: 0;
+}
+
+.iot-advertise-grid img {
+  width: 50%;
+}
+
+@media (max-width: 700px) {
+  .iot-advertise-grid {
+    flex-direction: column;
+  }
+
+  .iot-advertise-grid img {
+    width: 100%;
+  }
 }
 
 /* ── 반응형: 태블릿 이하 ── */

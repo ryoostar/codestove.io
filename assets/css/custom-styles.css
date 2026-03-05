@@ -4,6 +4,15 @@
    Modern Design Enhancements for CodeStove
    ========================================================================== */
 
+/* Hero text readability */
+.page__hero--overlay .page__title {
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7), 0 0 20px rgba(0, 0, 0, 0.4) !important;
+}
+
+.page__hero--overlay .page__lead {
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7), 0 0 20px rgba(0, 0, 0, 0.4) !important;
+}
+
 /* Smooth Scroll */
 html {
   scroll-behavior: smooth;

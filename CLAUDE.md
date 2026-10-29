@@ -147,26 +147,32 @@ Active plugins (github-pages compatible):
 ## Deployment Configuration
 
 ### Git Remotes
-This repository has two remotes configured:
+This checkout has a single remote, and it is the production repository:
 ```bash
-origin           https://github.com/shine-codestove/codestove-site.git  # Development repo
-codestove.io     https://github.com/ryoostar/codestove.io               # Production repo
+origin    https://github.com/ryoostar/codestove.io   # Production repo (GitHub Pages)
 ```
+Older notes mentioned a separate `codestove.io` remote for production and `origin`
+pointing at a development repo (shine-codestove/codestove-site). That is no longer the
+case here — run `git remote -v` before deploying and push to whichever remote points at
+`ryoostar/codestove.io`.
 
 ### Deployment Process
 ```bash
-# 1. Test locally with Docker
+# 1. Test locally (Docker, or the `jekyll` config in .claude/launch.json)
 docker compose up
 
-# 2. Commit changes
+# 2. Commit changes on your working branch
 git add -A
 git commit -m "Your commit message"
 
-# 3. Push to production repository
-git push codestove.io main
+# 3. Fast-forward main (from the main checkout) and push to the production repository
+git merge --ff-only <your-branch>
+git push origin main
 
-# 4. GitHub Pages will automatically build and deploy (1-2 minutes)
+# 4. GitHub Pages builds and deploys automatically (1-2 minutes);
+#    check with: gh run list --repo ryoostar/codestove.io --limit 1
 ```
+Deploying is pushing `main` to `ryoostar/codestove.io`. Feature branches are not built.
 
 ### _config.yml Production Settings
 ```yaml
@@ -257,7 +263,7 @@ Value: ryoostar.github.io
 4. Wait up to 24 hours for SSL certificate provisioning
 
 **Changes not appearing:**
-- Remember to push to `codestove.io` remote (not just `origin`)
+- Make sure `main` was pushed to the remote that points at `ryoostar/codestove.io` (here: `origin`); feature branches are not deployed
 - Check GitHub Actions for build status
 - Clear browser cache (Cmd+Shift+R on Mac, Ctrl+Shift+R on Windows)
 - _config.yml changes require Docker restart: `docker compose restart`

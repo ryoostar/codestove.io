@@ -1,0 +1,18 @@
+{%- comment -%} 협력 고객사 마퀴 (데이터: _data/clients.yml). 두 번째 트랙은 끊김 없는 루프용 복제본. {%- endcomment -%}
+<section class="cs-clients" aria-label="협력 고객사">
+  <div class="cs-clients__inner">
+    <p class="cs-clients__label">함께한 고객사</p>
+    <div class="cs-marquee">
+      <ul class="cs-marquee__track">
+        {%- for client in site.data.clients %}
+        <li><i class="fas fa-building"></i>{{ client }}</li>
+        {%- endfor %}
+      </ul>
+      <ul class="cs-marquee__track" aria-hidden="true">
+        {%- for client in site.data.clients %}
+        <li><i class="fas fa-building"></i>{{ client }}</li>
+        {%- endfor %}
+      </ul>
+    </div>
+  </div>
+</section>

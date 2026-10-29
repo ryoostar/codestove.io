@@ -221,15 +221,20 @@ Value: ryoostar.github.io
 - `_sass/_custom-styles.scss` – the few older customizations still active (smooth scroll, gallery hover, section separator, itr hover). Everything else (highlight boxes, contact cards, IoT ad grid, the whole portfolio page) moved to `_codestove.scss`.
 - `assets/css/custom-styles.css` is an old, unused copy. Do not edit it.
 
-**Design Components (index page):**
-- **Hero** (`_includes/cs-hero.html`): eyebrow pill, title with rolling gradient keyword (`.cs-roll`), lead, dark/ghost CTAs, proof strip (`.cs-hero__proof` – keep numbers in sync with the portfolio stats), floating tags, blurred gradient blobs, dot grid, scroll indicator.
-- **Feature cards** (`.cs-feature-grid` > `.cs-feature`): white cards with gradient icon chips (brand gradient for AI, warm gradient for full-stack).
-- **Image tiles** (`figure.third`), **image rows** (`.itr-container`, left-aligned text on desktop), **IoT ad grid**, **Contact cards**.
+**Design Components (index page, top to bottom):**
+- **Hero** (`_includes/cs-hero.html`): eyebrow pill, title with rolling gradient keyword (`.cs-roll`), lead, dark/ghost CTAs, proof strip (`.cs-hero__proof` – numbers count up via `data-count`; keep them in sync with the portfolio stats), floating tags, blurred gradient blobs, dot grid, scroll indicator.
+- **Clients marquee** (`_includes/cs-clients.html`, data in `_data/clients.yml`): full-bleed band under the hero; two identical `.cs-marquee__track` lists (second is `aria-hidden`) scroll with a CSS keyframe, pause on hover, wrap statically under reduced motion.
+- **Enterprise**: `.cs-feature` cards (AI / full-stack) + `.cs-value` cards (성능 · 안정성 · 확장성). The old `figure.third` stock-image tiles were removed (files still in `assets/images/software-*.webp`).
+- **AIoT**: image rows (`.itr-container`); the image containers carry `data-parallax="0.1"`. `codestove.js` writes a `--py` custom property on them and the stylesheet applies it to `.itr-image`, so the measured rect never includes the offset. Disabled under 768px and under reduced motion.
+- **IoT Business**: `.cs-notice` (legal obligation callout), three `.cs-strength` cards, the `.cs-process` stepper (five `.cs-step` items; one is `.is-active`, auto-advances every 3s while in view, pauses on hover, click/Enter/Space selects) and the `.cs-iot-contact` pill (phone + iot@codestove.io). This replaced the two `iot-advertise-*.png` images; their text content was moved into the markup.
+- **Portfolio preview** (`#projects`): `.cs-carousel` with a scroll-snap `.cs-carousel__track` of `.cs-project` cards rendered from `_data/featured_projects.yml` (keep it in sync with `_pages/portfolio.html`), prev/next buttons, and a link to `/portfolio/`.
+- **Contact**: dark `.cs-contact` block (same look as the portfolio CTA) holding the three `.contact-card.contact-card--glass` cards.
 
 **Portfolio page (`_pages/portfolio.html`):** compact typographic hero (`.cs-page-hero`, no stock photo), pill filter buttons, alternating timeline with white cards and black year pills, white stat cards whose numbers count up (`.stat-number[data-count][data-suffix]`), and a dark CTA block (`.portfolio-cta`, `.cs-btn--light`). The timeline/stat reveal uses the page's own IntersectionObserver (`.visible`), not AOS; the count-up lives in `codestove.js`. All portfolio styles are in `_codestove.scss`.
 
 **Motion (`assets/js/codestove.js`, loaded after AOS in `_includes/scripts.html`):**
-- `AOS.init` (once, 700ms, offset 60); hero keyword rolls every 3s; `.masthead.is-scrolled` is toggled after 12px of scroll (adds a shadow); `.stat-number[data-count]` counts up when scrolled into view.
+- `AOS.init` (once, 700ms, offset 60); hero keyword rolls every 3s; `.masthead.is-scrolled` is toggled after 12px of scroll (adds a shadow); any `[data-count]` element counts up when scrolled into view (`data-suffix`, optional `data-count-delay` in ms); `[data-parallax]` images drift on scroll; `.cs-process` auto-highlights steps; `.cs-carousel` buttons scroll by one card.
+- No GSAP/Swiper: parallax, the stepper and the carousel are small vanilla implementations in `codestove.js`, so the only third-party scripts are jQuery (bundled) and AOS (CDN).
 - Put `data-aos` on elements INSIDE a `section.site-section`, never on the section itself (the theme positions sections with `translateX(-50%)`; AOS would override that transform). `_codestove.scss` also force-neutralizes any `section.site-section[data-aos]`.
 - `body { overflow-x: hidden }` is required because `fade-left/right` slide elements in from off-canvas.
 - All decorative motion is disabled under `prefers-reduced-motion`.
@@ -242,6 +247,8 @@ Value: ryoostar.github.io
 - `/imprint` (`_pages/imprint.md`) is a Korean site notice / privacy page, linked from the footer copyright line. It lists the CDNs the site loads from; update it if you add or remove third-party resources.
 - Portfolio "년간 운영" stat is computed from 2022 at build time (`site.time`).
 - Footer social links come from `footer.links` in `_config.yml`; entries without `url` are skipped by `_includes/footer.html`.
+
+**Data files:** `_data/clients.yml` (marquee), `_data/featured_projects.yml` (homepage carousel: title, year, category `iot|web|platform|marketing`, category_label, icon, client, summary).
 
 **Important Design Notes:**
 - Images use `.webp` format for optimal performance

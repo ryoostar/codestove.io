@@ -1,0 +1,50 @@
+# 메인 페이지 "최근 프로젝트" 캐러셀. 내용은 _pages/portfolio.html 타임라인과 맞춰 유지.
+# category: iot | web | platform | marketing  (category-badge 색상과 동일)
+- title: "소규모 사업장 대기오염방지시설 IoT 설치 지원사업 2차"
+  year: 2025
+  category: iot
+  category_label: "IoT / AIoT"
+  icon: fa-wind
+  client: "한국환경공단 협력"
+  summary: "제주시·서귀포시 추가 사업장 대상 IoT 측정기기 설치 확대. 사업장 방문·점검부터 설치 계약, 준공 관리까지 수행했습니다."
+- title: "연구 데이터 통합 분석 플랫폼 완성"
+  year: 2025
+  category: platform
+  category_label: "플랫폼 / 시스템"
+  icon: fa-database
+  summary: "멀티 테넌트 지원, AI 기반 데이터 인사이트 자동 생성, 외부 시스템 연동 API 등 최종 고도화와 운영 안정화를 진행했습니다."
+- title: "무인 탁구장 운영 플랫폼 개선"
+  year: 2025
+  category: platform
+  category_label: "플랫폼 / 시스템"
+  icon: fa-table-tennis-paddle-ball
+  client: "탁구발전소"
+  summary: "예약·결제·입장 관리 플랫폼의 UI 리뉴얼, 결제 시스템 안정화, 운영 관리자 대시보드 고도화."
+- title: "NFT 음원 거래 플랫폼 개발"
+  year: 2025
+  category: web
+  category_label: "웹/앱 개발"
+  icon: fa-music
+  client: "폰드메이커스"
+  summary: "블록체인 기반 음원 NFT 발행·거래 플랫폼. 음원 DRM 연동과 스마트 컨트랙트 기반 저작권 관리를 구현했습니다."
+- title: "B2B CRM Master 플랫폼 개발"
+  year: 2024
+  category: platform
+  category_label: "플랫폼 / 시스템"
+  icon: fa-handshake
+  client: "아카라코리아"
+  summary: "고객사 정보 관리, 영업 파이프라인 추적, 계약·견적 관리, 통합 리포트를 갖춘 B2B CRM 플랫폼 구축."
+- title: "스마트빌딩 관제 시스템 개발"
+  year: 2023
+  category: iot
+  category_label: "IoT / AIoT"
+  icon: fa-building
+  client: "아카라코리아"
+  summary: "무인 오피스를 위한 IoT 관제 시스템. 출입 통제, 조명·냉난방 자동화, 에너지 사용량 모니터링 대시보드 제공."
+- title: "양주복지관 IoT 관제 시스템 개발"
+  year: 2023
+  category: iot
+  category_label: "IoT / AIoT"
+  icon: fa-heart-pulse
+  client: "양주복지관"
+  summary: "장애인·노약자 가정의 IoT 장비를 복지사가 상시 모니터링하는 관제 시스템. AI 모델로 이상·위험 패턴을 자동 감지합니다."

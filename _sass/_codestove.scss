@@ -1260,7 +1260,705 @@ p.cs-page-hero__lead {
   margin-bottom: 0.8rem;
 }
 
+
+/* ==========================================================================
+   Phase 2 components (2026-10-29)
+   - clients marquee, value cards, parallax images, IoT process stepper,
+     project carousel, dark contact block
+   ========================================================================== */
+
+/* ---------- Clients marquee ---------- */
+.cs-clients {
+  position: relative;
+  width: 100vw;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 1.4rem 5vw;
+  background: var(--cs-surface);
+  border-top: 1px solid var(--cs-line);
+  border-bottom: 1px solid var(--cs-line);
+}
+
+.cs-clients__inner {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  max-width: var(--cs-max);
+  margin: 0 auto;
+}
+
+p.cs-clients__label {
+  flex: 0 0 auto;
+  margin: 0;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--cs-ink-soft);
+  white-space: nowrap;
+}
+
+.cs-marquee {
+  flex: 1 1 auto;
+  display: flex;
+  min-width: 0;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+
+.cs-marquee__track {
+  display: flex;
+  flex: 0 0 auto;
+  gap: 0.8rem;
+  margin: 0;
+  padding: 0 0.8rem 0 0;
+  list-style: none;
+  animation: cs-marquee 32s linear infinite;
+}
+
+.cs-marquee:hover .cs-marquee__track {
+  animation-play-state: paused;
+}
+
+.cs-marquee__track li {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin: 0;
+  padding: 0.5rem 1rem;
+  border-radius: var(--cs-radius-pill);
+  background: #fff;
+  border: 1px solid var(--cs-line);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--cs-ink);
+  white-space: nowrap;
+}
+
+.cs-marquee__track li i {
+  color: var(--cs-blue);
+  font-size: 0.78rem;
+}
+
+@keyframes cs-marquee {
+  to {
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
+/* ---------- Value cards (Enterprise: 성능 · 안정성 · 확장성) ---------- */
+.cs-value-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.2rem;
+  margin: 0 auto;
+}
+
+.cs-value {
+  position: relative;
+  padding: 1.8rem 1.6rem 1.7rem;
+  background: var(--cs-surface);
+  border: 1px solid var(--cs-line);
+  border-radius: var(--cs-radius-lg);
+  text-align: left;
+  transition:
+    transform 0.35s var(--cs-ease),
+    background 0.35s,
+    box-shadow 0.35s var(--cs-ease);
+}
+
+.cs-value:hover {
+  transform: translateY(-6px);
+  background: #fff;
+  box-shadow: var(--cs-shadow-md);
+}
+
+.cs-value__num {
+  position: absolute;
+  top: 1.4rem;
+  right: 1.5rem;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: rgba(20, 25, 31, 0.28);
+}
+
+.cs-value__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  margin-bottom: 1.1rem;
+  border-radius: 14px;
+  background: #fff;
+  border: 1px solid var(--cs-line);
+  color: var(--cs-blue);
+  font-size: 1.15rem;
+  box-shadow: var(--cs-shadow-sm);
+}
+
+.cs-value strong {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-size: 1.1rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--cs-ink);
+}
+
+.cs-value p {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  text-align: left;
+}
+
+/* ---------- Parallax (AIoT images) ----------
+   codestove.js writes --py on [data-parallax]; the image inherits it. */
+.itr-image {
+  transform: translate3d(0, var(--py, 0px), 0);
+  will-change: transform;
+  transition: box-shadow 0.35s var(--cs-ease);
+}
+
+.itr-container:hover .itr-image {
+  transform: translate3d(0, var(--py, 0px), 0);
+  box-shadow: 0 22px 44px rgba(20, 25, 31, 0.16);
+}
+
+/* ---------- IoT business: notice, strengths, process ---------- */
+.site-section .cs-notice {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  max-width: 860px;
+  margin: 0 auto 2.4rem;
+  padding: 1.2rem 1.5rem;
+  border-radius: var(--cs-radius-md);
+  background: #fff4ee;
+  border: 1px solid rgba(255, 122, 69, 0.3);
+  text-align: left;
+}
+
+.cs-notice i {
+  flex: 0 0 auto;
+  margin-top: 0.25rem;
+  color: var(--cs-orange);
+  font-size: 1.2rem;
+}
+
+.cs-notice p {
+  margin: 0;
+  font-size: 0.98rem;
+  line-height: 1.7;
+  color: var(--cs-ink);
+  text-align: left;
+}
+
+.cs-notice strong {
+  font-weight: 800;
+}
+
+.cs-strength-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.2rem;
+  margin: 0 auto 3.4rem;
+}
+
+.cs-strength {
+  padding: 1.7rem 1.5rem;
+  background: #fff;
+  border: 1px solid var(--cs-line);
+  border-radius: var(--cs-radius-lg);
+  box-shadow: var(--cs-shadow-sm);
+  text-align: left;
+  transition:
+    transform 0.35s var(--cs-ease),
+    box-shadow 0.35s var(--cs-ease),
+    border-color 0.35s var(--cs-ease);
+}
+
+.cs-strength:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--cs-shadow-md);
+  border-color: rgba(59, 156, 186, 0.35);
+}
+
+.cs-strength__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: var(--cs-grad-brand);
+  color: #fff;
+  font-size: 1.2rem;
+  box-shadow: 0 8px 18px rgba(111, 66, 193, 0.22);
+}
+
+.cs-strength__icon--warm {
+  background: var(--cs-grad-warm);
+  box-shadow: 0 8px 18px rgba(255, 122, 69, 0.25);
+}
+
+.cs-strength strong {
+  display: block;
+  margin: 0.9rem 0 0.4rem;
+  font-size: 1.08rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--cs-ink);
+  word-break: keep-all;
+}
+
+.cs-strength p {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  text-align: left;
+}
+
+.cs-process {
+  margin: 0 auto;
+}
+
+.cs-process__title {
+  margin: 0 0 1.4rem;
+  font-size: 1.15rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--cs-ink);
+  text-align: center;
+}
+
+.cs-process__steps {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cs-step {
+  position: relative;
+  margin: 0;
+  padding: 1.5rem 1.2rem 1.5rem;
+  background: #fff;
+  border: 1px solid var(--cs-line);
+  border-radius: var(--cs-radius-md);
+  text-align: left;
+  cursor: pointer;
+  overflow: hidden;
+  transition:
+    transform 0.35s var(--cs-ease),
+    box-shadow 0.35s var(--cs-ease),
+    border-color 0.35s;
+}
+
+.cs-step:hover {
+  border-color: rgba(59, 156, 186, 0.35);
+}
+
+.cs-step:focus-visible {
+  outline: 2px solid var(--cs-blue);
+  outline-offset: 3px;
+}
+
+.cs-step.is-active {
+  transform: translateY(-6px);
+  box-shadow: var(--cs-shadow-md);
+  border-color: transparent;
+}
+
+.cs-step__index {
+  display: block;
+  margin-bottom: 0.9rem;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  color: var(--cs-ink-soft);
+}
+
+.cs-step.is-active .cs-step__index {
+  color: var(--cs-blue);
+}
+
+.cs-step__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  margin-bottom: 1rem;
+  border-radius: 14px;
+  background: var(--cs-surface);
+  color: var(--cs-ink-soft);
+  font-size: 1.1rem;
+  transition:
+    background 0.35s,
+    color 0.35s,
+    transform 0.35s var(--cs-ease),
+    box-shadow 0.35s;
+}
+
+.cs-step.is-active .cs-step__icon {
+  background: var(--cs-grad-brand);
+  color: #fff;
+  transform: scale(1.06);
+  box-shadow: 0 8px 18px rgba(111, 66, 193, 0.22);
+}
+
+.cs-step strong {
+  display: block;
+  margin-bottom: 0.35rem;
+  font-size: 1rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--cs-ink);
+  word-break: keep-all;
+}
+
+.cs-step p {
+  margin: 0;
+  font-size: 0.88rem;
+  line-height: 1.65;
+  text-align: left;
+}
+
+.cs-step__progress {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 3px;
+  background: var(--cs-line);
+}
+
+.cs-step__progress::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 0;
+  background: var(--cs-grad-brand);
+}
+
+.cs-step.is-active .cs-step__progress::after {
+  animation: cs-progress 3s linear forwards;
+}
+
+.cs-process:hover .cs-step.is-active .cs-step__progress::after {
+  animation-play-state: paused;
+}
+
+@keyframes cs-progress {
+  from { width: 0; }
+  to   { width: 100%; }
+}
+
+.cs-iot-contact {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem 1.6rem;
+  width: fit-content;
+  margin: 2.4rem auto 0;
+  padding: 1rem 1.8rem;
+  border-radius: var(--cs-radius-pill);
+  background: var(--cs-surface);
+  border: 1px solid var(--cs-line);
+}
+
+.cs-iot-contact span {
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--cs-ink-soft);
+}
+
+.cs-iot-contact a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-weight: 700;
+  color: var(--cs-ink);
+  text-decoration: none;
+  transition: color 0.25s;
+}
+
+.cs-iot-contact a i {
+  color: var(--cs-blue);
+  font-size: 0.9rem;
+}
+
+.cs-iot-contact a:hover {
+  color: var(--cs-blue);
+}
+
+/* ---------- Project carousel (main page) ---------- */
+.cs-carousel {
+  position: relative;
+  margin: 0 auto;
+}
+
+.cs-carousel__track {
+  display: flex;
+  gap: 1.2rem;
+  margin: 0;
+  padding: 0.5rem 0.25rem 1.2rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-padding-left: 0.25rem;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.cs-carousel__track::-webkit-scrollbar {
+  display: none;
+}
+
+.cs-carousel__track:focus-visible {
+  outline: 2px solid var(--cs-blue);
+  outline-offset: 4px;
+  border-radius: var(--cs-radius-md);
+}
+
+.cs-project {
+  flex: 0 0 calc((100% - 2.4rem) / 3);
+  display: flex;
+  flex-direction: column;
+  scroll-snap-align: start;
+  padding: 1.7rem 1.6rem 1.6rem;
+  background: #fff;
+  border: 1px solid var(--cs-line);
+  border-radius: var(--cs-radius-lg);
+  box-shadow: var(--cs-shadow-sm);
+  text-align: left;
+  transition:
+    transform 0.35s var(--cs-ease),
+    box-shadow 0.35s var(--cs-ease),
+    border-color 0.35s var(--cs-ease);
+}
+
+.cs-project:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--cs-shadow-md);
+  border-color: rgba(59, 156, 186, 0.35);
+}
+
+.cs-project__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem;
+  margin-bottom: 1.2rem;
+}
+
+.cs-project__year {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--cs-ink-soft);
+}
+
+.cs-project__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  margin-bottom: 1rem;
+  border-radius: 14px;
+  background: var(--cs-surface);
+  color: var(--cs-blue);
+  font-size: 1.1rem;
+}
+
+.cs-project h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.1rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.4;
+  color: var(--cs-ink);
+  word-break: keep-all;
+}
+
+.cs-project p {
+  flex: 1 1 auto;
+  margin: 0 0 1.1rem;
+  font-size: 0.92rem;
+  line-height: 1.7;
+  text-align: left;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.cs-project__client {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--cs-ink-soft);
+}
+
+.cs-project__client i {
+  color: var(--cs-blue);
+  font-size: 0.75rem;
+}
+
+.cs-carousel__nav {
+  display: flex;
+  justify-content: center;
+  gap: 0.6rem;
+  margin-top: 0.4rem;
+}
+
+.cs-carousel__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border-radius: 50%;
+  border: 1px solid var(--cs-line);
+  background: #fff;
+  color: var(--cs-ink);
+  font-size: 0.9rem;
+  cursor: pointer;
+  box-shadow: var(--cs-shadow-sm);
+  transition:
+    background 0.25s,
+    color 0.25s,
+    transform 0.25s var(--cs-ease),
+    opacity 0.25s;
+}
+
+.cs-carousel__btn:hover:not(:disabled) {
+  background: var(--cs-ink);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.cs-carousel__btn:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.cs-section-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 2.2rem;
+}
+
+/* ---------- Dark contact block ---------- */
+.cs-contact {
+  position: relative;
+  overflow: hidden;
+  padding: 4.2rem 2.5rem 3rem;
+  border-radius: var(--cs-radius-lg);
+  background: var(--cs-ink);
+  color: #fff;
+  text-align: center;
+}
+
+.cs-contact__bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(560px 380px at 6% 115%, rgba(59, 156, 186, 0.5), transparent 70%),
+    radial-gradient(560px 380px at 96% -15%, rgba(111, 66, 193, 0.55), transparent 70%);
+}
+
+.cs-contact > *:not(.cs-contact__bg) {
+  position: relative;
+  z-index: 1;
+}
+
+p.cs-contact__eyebrow {
+  margin: 0 0 0.8rem;
+  color: rgba(255, 255, 255, 0.6) !important;
+  font-size: 0.8rem !important;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.cs-contact h2.cs-contact__title {
+  margin: 0 0 1rem;
+  padding-bottom: 0;
+  border-bottom: 0;
+  font-size: clamp(1.7rem, 3vw, 2.5rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: #fff;
+  text-align: center;
+  word-break: keep-all;
+}
+
+p.cs-contact__lead {
+  max-width: 640px;
+  margin: 0 auto 2.6rem;
+  color: rgba(255, 255, 255, 0.72) !important;
+  font-size: 1.02rem;
+  line-height: 1.75;
+  text-align: center;
+  word-break: keep-all;
+}
+
+.contact-grid--dark {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  max-width: 100%;
+}
+
+.contact-card--glass {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.12);
+  box-shadow: none;
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+}
+
+.contact-card--glass:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.3);
+}
+
+.contact-card--glass h3 {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.contact-card--glass .contact-link {
+  color: #fff !important;
+}
+
+.contact-card--glass a.contact-link:hover {
+  color: #9ad8ea !important;
+}
+
+.contact-card--glass p.contact-description {
+  color: rgba(255, 255, 255, 0.62);
+}
+
 /* ---------- Responsive ---------- */
+@media (max-width: 1200px) {
+  .cs-step {
+    padding: 1.3rem 1rem 1.4rem;
+  }
+}
+
 @media (max-width: 1100px) {
   .cs-tag--5,
   .cs-tag--6 {
@@ -1283,6 +1981,33 @@ p.cs-page-hero__lead {
   .portfolio-stats {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
+  .cs-project {
+    flex-basis: calc((100% - 1.2rem) / 2);
+  }
+
+  /* process: vertical list, icon left */
+  .cs-process__steps {
+    grid-template-columns: 1fr;
+    gap: 0.7rem;
+  }
+  .cs-step {
+    display: grid;
+    grid-template-columns: 46px 1fr;
+    grid-template-areas:
+      "icon index"
+      "icon title"
+      "icon text";
+    column-gap: 1rem;
+    padding: 1.1rem 1.2rem 1.2rem;
+  }
+  .cs-step__index { grid-area: index; margin-bottom: 0.2rem; }
+  .cs-step__icon  { grid-area: icon; margin-bottom: 0; align-self: start; }
+  .cs-step strong { grid-area: title; }
+  .cs-step p      { grid-area: text; }
+  .cs-step.is-active {
+    transform: translateX(6px);
+  }
 }
 
 @media (max-width: 768px) {
@@ -1294,6 +2019,12 @@ p.cs-page-hero__lead {
   }
   .itr-text {
     text-align: center;
+  }
+
+  .cs-value-grid,
+  .cs-strength-grid,
+  .contact-grid--dark {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -1331,6 +2062,27 @@ p.cs-page-hero__lead {
   }
   .portfolio-cta {
     padding: 3rem 1.4rem 3.2rem;
+  }
+
+  .cs-clients__inner {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.8rem;
+  }
+  p.cs-clients__label {
+    text-align: center;
+  }
+  .cs-project {
+    flex-basis: 84%;
+  }
+  .cs-iot-contact {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    border-radius: var(--cs-radius-md);
+  }
+  .cs-contact {
+    padding: 3rem 1.2rem 1.6rem;
   }
 }
 
@@ -1420,6 +2172,29 @@ section.site-section[data-aos] {
   .cs-tag {
     opacity: 1;
   }
+  .cs-marquee {
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+  .cs-marquee__track {
+    flex-wrap: wrap;
+    animation: none;
+  }
+  .cs-marquee__track[aria-hidden] {
+    display: none;
+  }
+  .cs-step__progress::after {
+    animation: none !important;
+  }
+  .itr-image {
+    transform: none;
+  }
+  .cs-value,
+  .cs-strength,
+  .cs-step,
+  .cs-step__icon,
+  .cs-project,
+  .cs-carousel__btn,
   .cs-btn,
   .cs-btn i,
   .cs-feature,

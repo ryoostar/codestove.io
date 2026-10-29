@@ -6,6 +6,8 @@ permalink: /
 
 {% include cs-hero.html %}
 
+{% include cs-clients.html %}
+
 <section class="site-section first-section" id="enterprise-software">
   <h1 data-aos="fade-up">Enterprise Software</h1>
 
@@ -45,17 +47,35 @@ permalink: /
     </div>
   </div>
 
-  <figure class="third">
-    <a href="/assets/images/software-1.webp" title="Performance" data-aos="zoom-in" data-aos-delay="0">
-      <img src="/assets/images/software-1.webp" alt="Performance" />
-    </a>
-    <a href="/assets/images/software-2.webp" title="Stability" data-aos="zoom-in" data-aos-delay="120">
-      <img src="/assets/images/software-2.webp" alt="Stability" />
-    </a>
-    <a href="/assets/images/software-3.webp" title="Expandability" data-aos="zoom-in" data-aos-delay="240">
-      <img src="/assets/images/software-3.webp" alt="Expandability" />
-    </a>
-  </figure>
+  <div class="cs-value-grid">
+    <div class="cs-value" data-aos="fade-up" data-aos-delay="0">
+      <span class="cs-value__num" aria-hidden="true">01</span>
+      <div class="cs-value__icon"><i class="fas fa-gauge-high"></i></div>
+      <strong>성능</strong>
+      <p>
+        대용량 트래픽과 데이터를 전제로 설계합니다. 병목을 먼저 찾고, 측정하며
+        최적화합니다.
+      </p>
+    </div>
+    <div class="cs-value" data-aos="fade-up" data-aos-delay="120">
+      <span class="cs-value__num" aria-hidden="true">02</span>
+      <div class="cs-value__icon"><i class="fas fa-shield-halved"></i></div>
+      <strong>안정성</strong>
+      <p>
+        대형 금융 프로젝트에서 다진 데이터 무결성과 장애 대응 원칙을 적용하고,
+        테스트와 모니터링을 기본으로 합니다.
+      </p>
+    </div>
+    <div class="cs-value" data-aos="fade-up" data-aos-delay="240">
+      <span class="cs-value__num" aria-hidden="true">03</span>
+      <div class="cs-value__icon"><i class="fas fa-diagram-project"></i></div>
+      <strong>확장성</strong>
+      <p>
+        모듈화된 아키텍처로 기능과 규모가 커져도 구조를 다시 짓지 않고 확장할 수
+        있게 만듭니다.
+      </p>
+    </div>
+  </div>
 </section>
 
 <hr class="section-sep" />
@@ -66,7 +86,7 @@ permalink: /
   <h2 data-aos="fade-up" data-aos-delay="80">Home, Industrial, Smart farm</h2>
 
   <div class="itr-container">
-    <div class="itr-image-container" data-aos="fade-right">
+    <div class="itr-image-container" data-aos="fade-right" data-parallax="0.1">
       <img
         src="/assets/images/aiot-3.webp"
         alt="노약자 원격 케어 IoT"
@@ -95,7 +115,7 @@ permalink: /
         <span class="cs-badge"><i class="fas fa-certificate"></i> 한국환경공단 소규모 대기배출시설 측정기기 공식 설치업체</span>
       </p>
     </div>
-    <div class="itr-image-container" data-aos="fade-left">
+    <div class="itr-image-container" data-aos="fade-left" data-parallax="0.1">
       <img
         src="/assets/images/aiot-4.webp"
         alt="대기오염방지시설 IoT 측정기기"
@@ -118,52 +138,173 @@ permalink: /
     IoT 측정기기를 설치하고, 보조금 신청부터 준공까지 전 과정을 지원합니다.
   </p>
 
-  <div class="iot-advertise-grid">
-    <img src="/assets/images/iot-advertise-1.png" alt="소규모 대기배출시설 IoT 측정기기 설치 안내" data-aos="fade-up" />
-    <img src="/assets/images/iot-advertise-2.png" alt="코드스토브 IoT 설치 서비스 소개" data-aos="fade-up" data-aos-delay="150" />
+  <div class="cs-notice" data-aos="fade-up">
+    <i class="fas fa-triangle-exclamation" aria-hidden="true"></i>
+    <p>
+      <strong>대기환경보전법 시행령 제17조</strong>에 따라 소규모 대기배출시설의
+      사물인터넷(IoT) 측정기기 설치는 의무 사항입니다. 코드스토브는 제주도내 최초로
+      한국환경공단에 등록된 공식 설치업체입니다.
+    </p>
+  </div>
+
+  <div class="cs-strength-grid">
+    <div class="cs-strength" data-aos="fade-up" data-aos-delay="0">
+      <div class="cs-strength__icon"><i class="fas fa-microchip"></i></div>
+      <strong>사물인터넷(IoT) 전문업체</strong>
+      <p>
+        소프트웨어와 하드웨어 모두에서 풍부한 전문 지식과 프로젝트 경험을 보유한
+        팀이 고객의 요구를 충족시킵니다.
+      </p>
+    </div>
+    <div class="cs-strength" data-aos="fade-up" data-aos-delay="120">
+      <div class="cs-strength__icon cs-strength__icon--warm"><i class="fas fa-headset"></i></div>
+      <strong>책임 있는 제주도내 A/S</strong>
+      <p>
+        설치뿐만 아니라 설치 후 사후관리도 도외 업체가 할 수 없는 신속한 방문과
+        대처를 약속드립니다.
+      </p>
+    </div>
+    <div class="cs-strength" data-aos="fade-up" data-aos-delay="240">
+      <div class="cs-strength__icon"><i class="fas fa-magnifying-glass-location"></i></div>
+      <strong>현장 실사 기반 정확한 설계·견적</strong>
+      <p>
+        사전 현장 방문으로 정확한 설비 견적을 진행하여 과대 견적을 방지하고
+        고객의 비용 부담을 최소화합니다.
+      </p>
+    </div>
+  </div>
+
+  <div class="cs-process" data-aos="fade-up">
+    <h3 class="cs-process__title">설치 진행 절차</h3>
+    <ol class="cs-process__steps">
+      <li class="cs-step is-active" tabindex="0">
+        <span class="cs-step__index">STEP 01</span>
+        <div class="cs-step__icon"><i class="fas fa-magnifying-glass-location"></i></div>
+        <strong>상담 · 현장 실사</strong>
+        <p>사업장을 직접 방문해 방지시설과 설치 환경을 확인합니다.</p>
+        <span class="cs-step__progress" aria-hidden="true"></span>
+      </li>
+      <li class="cs-step" tabindex="0">
+        <span class="cs-step__index">STEP 02</span>
+        <div class="cs-step__icon"><i class="fas fa-file-signature"></i></div>
+        <strong>설계 · 견적</strong>
+        <p>실사 결과를 바탕으로 과대 견적 없이 필요한 구성만 제안합니다.</p>
+        <span class="cs-step__progress" aria-hidden="true"></span>
+      </li>
+      <li class="cs-step" tabindex="0">
+        <span class="cs-step__index">STEP 03</span>
+        <div class="cs-step__icon"><i class="fas fa-hand-holding-dollar"></i></div>
+        <strong>보조금 신청 지원</strong>
+        <p>한국환경공단 지원사업 신청 서류와 절차를 함께 준비합니다.</p>
+        <span class="cs-step__progress" aria-hidden="true"></span>
+      </li>
+      <li class="cs-step" tabindex="0">
+        <span class="cs-step__index">STEP 04</span>
+        <div class="cs-step__icon"><i class="fas fa-screwdriver-wrench"></i></div>
+        <strong>설치 · 시운전</strong>
+        <p>측정기기 설치 후 데이터 전송과 동작을 현장에서 검증합니다.</p>
+        <span class="cs-step__progress" aria-hidden="true"></span>
+      </li>
+      <li class="cs-step" tabindex="0">
+        <span class="cs-step__index">STEP 05</span>
+        <div class="cs-step__icon"><i class="fas fa-clipboard-check"></i></div>
+        <strong>준공 · 사후관리</strong>
+        <p>준공 처리 후에도 제주도내에서 신속한 A/S를 제공합니다.</p>
+        <span class="cs-step__progress" aria-hidden="true"></span>
+      </li>
+    </ol>
+  </div>
+
+  <div class="cs-iot-contact" data-aos="fade-up">
+    <span>IoT 측정기기 설치 문의</span>
+    <a href="tel:010-2410-7483"><i class="fas fa-phone"></i> 010-2410-7483</a>
+    <a href="mailto:iot@codestove.io"><i class="fas fa-envelope"></i> iot@codestove.io</a>
+  </div>
+</section>
+
+<hr class="section-sep" />
+
+<section class="site-section" id="projects">
+  <h1 data-aos="fade-up">Portfolio</h1>
+
+  <h2 data-aos="fade-up" data-aos-delay="80">최근 프로젝트</h2>
+
+  <p class="cs-section-intro" data-aos="fade-up" data-aos-delay="120">
+    2022년부터 고객사와 함께 만들어 온 IoT 관제, 데이터 플랫폼, 웹·모바일 서비스
+    중 일부입니다.
+  </p>
+
+  <div class="cs-carousel" data-aos="fade-up">
+    <div class="cs-carousel__track" tabindex="0" aria-label="최근 프로젝트 목록 (좌우로 스크롤)">
+      {%- for project in site.data.featured_projects %}
+      <article class="cs-project">
+        <div class="cs-project__top">
+          <span class="category-badge {{ project.category }}">{{ project.category_label }}</span>
+          <span class="cs-project__year">{{ project.year }}</span>
+        </div>
+        <div class="cs-project__icon"><i class="fas {{ project.icon }}"></i></div>
+        <h3>{{ project.title }}</h3>
+        <p>{{ project.summary }}</p>
+        {%- if project.client %}
+        <span class="cs-project__client"><i class="fas fa-building"></i> {{ project.client }}</span>
+        {%- endif %}
+      </article>
+      {%- endfor %}
+    </div>
+    <div class="cs-carousel__nav">
+      <button type="button" class="cs-carousel__btn" data-dir="-1" aria-label="이전 프로젝트">
+        <i class="fas fa-chevron-left"></i>
+      </button>
+      <button type="button" class="cs-carousel__btn" data-dir="1" aria-label="다음 프로젝트">
+        <i class="fas fa-chevron-right"></i>
+      </button>
+    </div>
+  </div>
+
+  <div class="cs-section-actions" data-aos="fade-up">
+    <a href="/portfolio/" class="cs-btn cs-btn--dark">전체 포트폴리오 보기 <i class="fas fa-arrow-right"></i></a>
   </div>
 </section>
 
 <hr class="section-sep" />
 
 <section class="site-section" id="contact-us">
-  <h1 data-aos="fade-up">Contact Us</h1>
+  <div class="cs-contact" data-aos="fade-up">
+    <div class="cs-contact__bg" aria-hidden="true"></div>
+    <p class="cs-contact__eyebrow">Contact Us</p>
+    <h2 class="cs-contact__title">프로젝트 이야기를 들려주세요</h2>
+    <p class="cs-contact__lead">
+      궁금하신 사항이 있으시면 언제든지 연락주세요.<br class="cs-br-desktop" />
+      프로젝트 규모와 관계없이 기획 단계부터 함께 고민해 드립니다.
+    </p>
 
-  <p class="cs-section-intro" data-aos="fade-up" data-aos-delay="80">
-    궁금하신 사항이 있으시면 언제든지 연락주세요.<br class="cs-br-desktop" />
-    프로젝트 규모와 관계없이 기획 단계부터 함께 고민해 드립니다.
-  </p>
-
-  <div class="contact-grid">
-    <div class="contact-card" data-aos="fade-up" data-aos-delay="0">
-      <div class="contact-icon">
-        <i class="fas fa-envelope"></i>
+    <div class="contact-grid contact-grid--dark">
+      <div class="contact-card contact-card--glass">
+        <div class="contact-icon">
+          <i class="fas fa-envelope"></i>
+        </div>
+        <h3>Email</h3>
+        <a href="mailto:info@codestove.io" class="contact-link">info@codestove.io</a>
+        <p class="contact-description">이메일로 문의하시면 빠르게 답변드리겠습니다.</p>
       </div>
-      <h3>Email</h3>
-      <a href="mailto:info@codestove.io" class="contact-link"
-        >info@codestove.io</a
-      >
-      <p class="contact-description">
-        이메일로 문의하시면 빠르게 답변드리겠습니다.
-      </p>
-    </div>
 
-    <div class="contact-card" data-aos="fade-up" data-aos-delay="120">
-      <div class="contact-icon">
-        <i class="fas fa-phone-alt"></i>
+      <div class="contact-card contact-card--glass">
+        <div class="contact-icon">
+          <i class="fas fa-phone-alt"></i>
+        </div>
+        <h3>Phone</h3>
+        <a href="tel:010-2410-7483" class="contact-link">010-2410-7483</a>
+        <p class="contact-description">평일 09:00 - 18:00</p>
       </div>
-      <h3>Phone</h3>
-      <a href="tel:010-2410-7483" class="contact-link">010-2410-7483</a>
-      <p class="contact-description">평일 09:00 - 18:00</p>
-    </div>
 
-    <div class="contact-card" data-aos="fade-up" data-aos-delay="240">
-      <div class="contact-icon">
-        <i class="fas fa-map-marker-alt"></i>
+      <div class="contact-card contact-card--glass">
+        <div class="contact-icon">
+          <i class="fas fa-map-marker-alt"></i>
+        </div>
+        <h3>Location</h3>
+        <p class="contact-link" style="cursor: default">Korea</p>
+        <p class="contact-description">IoT 설비는 제주도에 한함</p>
       </div>
-      <h3>Location</h3>
-      <p class="contact-link" style="cursor: default">Korea</p>
-      <p class="contact-description">IoT 설비는 제주도에 한함</p>
     </div>
   </div>
 </section>

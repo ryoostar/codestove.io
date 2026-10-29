@@ -2,21 +2,29 @@
 title: "포트폴리오"
 layout: page
 permalink: /portfolio/
-
-header:
-  overlay_image: /assets/images/header-2.webp
-  overlay_filter: rgba(0, 0, 0, 0.45)
-  caption: ""
 ---
 
 <section class="portfolio-page">
-  <div class="portfolio-intro">
-    <h1>프로젝트 포트폴리오</h1>
-    <p>현재까지 코드스토브가 고객과 함께 만들어온 프로젝트들입니다.</p>
+  <div class="cs-page-hero">
+    <div class="cs-page-hero__bg" aria-hidden="true">
+      <span class="cs-blob cs-blob--1"></span>
+      <span class="cs-blob cs-blob--2"></span>
+    </div>
+    <div class="cs-page-hero__inner">
+      <p class="cs-hero__eyebrow" data-aos="fade-up">Portfolio <span>·</span> 2022 – {{ site.time | date: "%Y" }}</p>
+      <h1 class="cs-page-hero__title" data-aos="fade-up" data-aos-delay="100">
+        고객과 함께 만들어온<br />
+        <span class="cs-text-gradient">프로젝트 이야기</span>
+      </h1>
+      <p class="cs-page-hero__lead" data-aos="fade-up" data-aos-delay="200">
+        엔터프라이즈 소프트웨어부터 제주 현장의 IoT 설치까지,<br class="cs-br-desktop" />
+        코드스토브가 기획·설계·구현을 맡아 완성한 프로젝트들입니다.
+      </p>
+    </div>
   </div>
 
   <!-- 카테고리 필터 -->
-  <div class="portfolio-filter">
+  <div class="portfolio-filter" data-aos="fade-up">
     <button class="filter-btn active" data-filter="all">전체</button>
     <button class="filter-btn" data-filter="web">웹/앱 개발</button>
     <button class="filter-btn" data-filter="iot">IoT / AIoT</button>
@@ -386,31 +394,35 @@ header:
   <!-- 통계 섹션 -->
   <div class="portfolio-stats">
     <div class="stat-card">
-      <span class="stat-number">15+</span>
+      <span class="stat-number" data-count="15" data-suffix="+">15+</span>
       <span class="stat-label">완료 프로젝트</span>
     </div>
     <div class="stat-card">
-      <span class="stat-number">4</span>
+      {%- comment -%} 2022년 첫 프로젝트 기준, 빌드 시점 연도로 자동 계산 {%- endcomment -%}
+      {%- assign cs_years = site.time | date: "%Y" | minus: 2022 -%}
+      <span class="stat-number" data-count="{{ cs_years }}">{{ cs_years }}</span>
       <span class="stat-label">년간 운영</span>
     </div>
     <div class="stat-card">
-      <span class="stat-number">10+</span>
+      <span class="stat-number" data-count="10" data-suffix="+">10+</span>
       <span class="stat-label">협력 고객사</span>
     </div>
     <div class="stat-card">
-      <span class="stat-number">5</span>
+      <span class="stat-number" data-count="5">5</span>
       <span class="stat-label">전문 분야</span>
     </div>
   </div>
 
   <!-- CTA -->
-  <div class="portfolio-cta">
-    <h2>프로젝트 협업</h2>
+  <div class="portfolio-cta" data-aos="fade-up">
+    <div class="portfolio-cta__bg" aria-hidden="true"></div>
+    <p class="portfolio-cta__eyebrow">다음 프로젝트</p>
+    <h2>함께 만들 아이디어가 있으신가요?</h2>
     <p>
-      코드스토브는 기획, 설계부터 구현까지 함께 합니다. 귀사의 아이디어를 현실로
-      만들어보세요.
+      코드스토브는 기획, 설계부터 구현과 운영까지 함께합니다.<br class="cs-br-desktop" />
+      프로젝트 규모와 관계없이 편하게 문의해 주세요.
     </p>
-    <a href="/#contact-us" class="cta-button"
+    <a href="/#contact-us" class="cs-btn cs-btn--light"
       >문의하기 <i class="fas fa-arrow-right"></i
     ></a>
   </div>

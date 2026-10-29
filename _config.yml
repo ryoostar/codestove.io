@@ -6,7 +6,7 @@
 # `jekyll serve`. If you change this file, please restart the server process.
 
 
-oneflow-skin    : "default" # "default", "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+oneflow-skin    : "codestove" # "codestove", "default", "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
 # Site Settings
 locale                   : "ko-KR"
@@ -23,7 +23,7 @@ show-popup               : false # set to false if you don't need / want to show
 masthead_title           : " "  # Overrides the website title displayed in the masthead, use " " for no title
 sticky-masthead          : true # if true, masthead/navigation bar will stay visible when the user scrolls down.
                                 # if false, it will move out of sight when scrolling.
-masthead-opacity         : 0.85 # set to any value between 0 and 1.
+masthead-opacity         : 1 # set to any value between 0 and 1.
                                 # 0.8-0.9 is a good recommended starting point. Only relevant if masthead is sticky.
 background-image         : # '/assets/images/header.webp' # Remove / out-comment, if you don't want a background image
 background-image-mobile  : # '/assets/images/header.webp' # If you want a different (e.g upright) background image for mobile
@@ -33,38 +33,18 @@ background-image-overlay : rgba(255, 255, 255, 0.5) # Set overlay for the backgr
 
 # Site Footer.
 footer:
-  links: # replace the URL's with your own for every link you want to have in your footer.
+  links: # entries without a url are skipped by _includes/footer.html
     - label: "Website"
       icon: "fa fa-globe"
       url: "https://codestove.io"
     - label: "Email"
       icon: "fa fa-envelope"
-      url: "mailto: info@codestove.io"
+      url: "mailto:info@codestove.io"
     - label: "LinkedIn"
       icon: "fab fa-linkedin"
       url: "https://www.linkedin.com/in/shineyu/"
-    - label: "X/Twitter"
-      icon: "fab fa-x-twitter"
-      # url:
-    - label: "Facebook"
-      icon: "fab fa-facebook"
-      # url:
-    - label: "GitHub"
-      icon: "fab fa-github"
-      # url: "https://github.com/perstarke-webdev"
-    - label: "Instagram"
-      icon: "fab fa-instagram"
-      # url: "https://www.instagram.com/per.starke/"
-    - label: "YouTube"
-      icon: "fab fa-youtube"
-      # url: "https://www.youtube.com/channel/UCG2Ndo4IEH8Fa0oIv2FBRMA"
-    - label: "Dev"
-      icon: "fab fa-dev"
-      # url: "https://dev.to/per-starke-642"
-  copyright: "CODESTOVE" # Replace with your own
-  creator: # Replace with your own creator name or remove this if you don't want any "created by" in the footer
-      name: "CODESTOVE"
-      url: "https://codestove.io"
+  copyright: "CODESTOVE"
+  # creator: omitted on purpose – it only repeated the copyright holder
 
 
 

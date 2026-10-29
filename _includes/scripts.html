@@ -11,3 +11,8 @@
     <script src="{{ script | relative_url }}"></script>
   {% endfor %}
 {% endif %}
+
+<!-- AOS (Animate On Scroll) + CodeStove motion scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+{%- comment -%} build stamp busts browser/CDN caches after each deploy {%- endcomment -%}
+<script src="{{ '/assets/js/codestove.js' | relative_url }}?v={{ site.time | date: '%s' }}"></script>

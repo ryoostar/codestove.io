@@ -19,4 +19,7 @@
 
   </div>
 
-  <div class="page__footer-copyright">&copy; {{ site.time | date: '%Y' }} {{ site.footer.copyright | default: site.title }}. {% if site.footer.creator %} Created by <a rel="noopener noreferrer nofollow" target="_blank"href="{{site.footer.creator.url}}">{{site.footer.creator.name}}</a>{% endif %}</div>
+  <div class="page__footer-copyright">&copy; {{ site.time | date: '%Y' }} {{ site.footer.copyright | default: site.title }}. {% if site.footer.creator %} Created by <a rel="noopener noreferrer nofollow" target="_blank" href="{{site.footer.creator.url}}">{{site.footer.creator.name}}</a>{% endif %}
+    <span class="page__footer-sep" aria-hidden="true">·</span>
+    <a href="{{ '/imprint' | relative_url }}" class="page__footer-imprint">이용 안내 및 개인정보 처리방침</a>
+  </div>

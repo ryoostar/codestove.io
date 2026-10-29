@@ -67,6 +67,9 @@ bundle exec jekyll serve
   - `image-text-row`: Component for image+text rows
   - `gallery`: Gallery component for showcasing images
   - `popup.html`: Cookie/CDN consent banner (controlled by `show-popup` in _config.yml)
+  - `cs-hero.html`: Typographic homepage hero (rolling keyword, floating tags, gradient blobs). Included from `_pages/index.html`; the theme's `page__hero.html` is no longer used on the homepage.
+  - `head/custom.html`: Favicons + Pretendard webfont + AOS CSS (CDN)
+  - `scripts.html`: Loads `main.min.js`, then AOS JS (CDN) and `assets/js/codestove.js`
   - `editables/`: Custom editable components
 
 ### Styling
@@ -77,12 +80,16 @@ bundle exec jekyll serve
   - `skins/`: Color scheme variations (10 themes available)
   - Main entry point: `oneflow.scss`
 
-- **assets/css/custom-styles.css**: For custom overrides without modifying theme files
+- **_sass/_custom-styles.scss**: Custom overrides (imported by `assets/css/main.scss`). This is the ACTIVE file.
+  `assets/css/custom-styles.css` is a stale, unused copy — do not edit it.
+- **_sass/_codestove.scss**: CodeStove design system (design tokens, glass masthead, typographic hero, AOS helpers, reduced-motion). Imported last in `main.scss`.
+- **_sass/oneflow/skins/_codestove.scss**: Active skin (`oneflow-skin: "codestove"`). Sets Pretendard as the global font and brand colors.
 
 ### JavaScript
 - **assets/js/**:
   - `_main.js`: Main JavaScript source (unminified)
   - `main.min.js`: Production minified bundle (generated)
+  - `codestove.js`: Not part of the bundle. Initializes AOS (`once: true`, 800ms) and runs the hero rolling keyword. Honors `prefers-reduced-motion`.
   - `plugins/`: jQuery plugins (fitvids, magnific-popup, greedy-navigation, smooth-scroll, gumshoe, etc.)
   - `vendor/jquery/`: jQuery library
   - Build process concatenates and minifies all JS files into `main.min.js`
@@ -201,27 +208,38 @@ Value: ryoostar.github.io
 - www.codestove.io → https://www.codestove.io
 - All HTTP requests → redirects to → HTTPS
 
-### Custom Design Features (Added 2025-11-20)
+### Custom Design Features
 
-**CSS Customizations** (`assets/css/custom-styles.css`):
-- Fade-in animations for sections (opacity-based to avoid transform conflicts)
-- Enhanced gallery card hover effects with shadows and scale
-- Professional contact cards with icons and hover animations
-- AI & Tech highlight boxes with gradient backgrounds
-- Section header underlines with gradient effect
-- Smooth scroll behavior
-- Responsive design for mobile/tablet/desktop
+**Active stylesheets** (compiled via `assets/css/main.scss`):
+- `_sass/_codestove.scss` – the CodeStove design system (redesign started 2026-10-29): CSS tokens (`--cs-*`), glass masthead, typographic hero, section layout (`--cs-max` reading width, centered `h1`/muted `h2`, `.cs-section-intro`), `.cs-feature` cards, image rows, contact cards, `.cs-badge`, `.cs-legal` page, responsive + reduced-motion rules. Put new styles here.
+- `_sass/_custom-styles.scss` – the few older customizations still active (smooth scroll, gallery hover, section separator, itr hover). Everything else (highlight boxes, contact cards, IoT ad grid, the whole portfolio page) moved to `_codestove.scss`.
+- `assets/css/custom-styles.css` is an old, unused copy. Do not edit it.
 
-**Design Components:**
-- **AI Highlight Box**: Purple gradient, brain icon, AI development message
-- **Tech Highlight Box**: Cyan gradient, layer icon, full-stack technology message
-- **Contact Cards**: Email, Phone, Location with Font Awesome icons
-- **Gallery Enhancements**: Border radius, shadow effects, hover transformations
+**Design Components (index page):**
+- **Hero** (`_includes/cs-hero.html`): eyebrow pill, title with rolling gradient keyword (`.cs-roll`), lead, dark/ghost CTAs, proof strip (`.cs-hero__proof` – keep numbers in sync with the portfolio stats), floating tags, blurred gradient blobs, dot grid, scroll indicator.
+- **Feature cards** (`.cs-feature-grid` > `.cs-feature`): white cards with gradient icon chips (brand gradient for AI, warm gradient for full-stack).
+- **Image tiles** (`figure.third`), **image rows** (`.itr-container`, left-aligned text on desktop), **IoT ad grid**, **Contact cards**.
+
+**Portfolio page (`_pages/portfolio.html`):** compact typographic hero (`.cs-page-hero`, no stock photo), pill filter buttons, alternating timeline with white cards and black year pills, white stat cards whose numbers count up (`.stat-number[data-count][data-suffix]`), and a dark CTA block (`.portfolio-cta`, `.cs-btn--light`). The timeline/stat reveal uses the page's own IntersectionObserver (`.visible`), not AOS; the count-up lives in `codestove.js`. All portfolio styles are in `_codestove.scss`.
+
+**Motion (`assets/js/codestove.js`, loaded after AOS in `_includes/scripts.html`):**
+- `AOS.init` (once, 700ms, offset 60); hero keyword rolls every 3s; `.masthead.is-scrolled` is toggled after 12px of scroll (adds a shadow); `.stat-number[data-count]` counts up when scrolled into view.
+- Put `data-aos` on elements INSIDE a `section.site-section`, never on the section itself (the theme positions sections with `translateX(-50%)`; AOS would override that transform). `_codestove.scss` also force-neutralizes any `section.site-section[data-aos]`.
+- `body { overflow-x: hidden }` is required because `fade-left/right` slide elements in from off-canvas.
+- All decorative motion is disabled under `prefers-reduced-motion`.
+
+**Cache busting:** `main.css` and `codestove.js` are linked with `?v={{ site.time | date: '%s' }}` (`_includes/head.html`, `_includes/scripts.html`), so every build gets a fresh URL. Without this the browser kept serving stale JS during local development.
+
+**Local dev without Docker:** `.claude/launch.json` defines a `jekyll` config (`bundle exec jekyll serve --livereload` on port 4000). `_config.yml` changes still need a server restart.
+
+**Content notes:**
+- `/imprint` (`_pages/imprint.md`) is a Korean site notice / privacy page, linked from the footer copyright line. It lists the CDNs the site loads from; update it if you add or remove third-party resources.
+- Portfolio "년간 운영" stat is computed from 2022 at build time (`site.time`).
+- Footer social links come from `footer.links` in `_config.yml`; entries without `url` are skipped by `_includes/footer.html`.
 
 **Important Design Notes:**
-- All animations use `opacity` only (NOT `transform`) to avoid conflicts with theme's `translateX(-50%)` positioning
 - Images use `.webp` format for optimal performance
-- Color palette follows professional blue/purple gradient scheme
+- Color palette: `--cs-blue #3b9cba`, `--cs-purple #6f42c1`, `--cs-orange #ff7a45`, ink `#14191f`
 - All text content is in Korean
 
 ### Troubleshooting

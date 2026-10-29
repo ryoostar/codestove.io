@@ -1,88 +1,59 @@
 ---
 layout: page
-title: Impressum und Datenschutz
+title: 이용 안내 및 개인정보 처리방침
 permalink: /imprint
 ---
 
-#### German Imprint
-This imprint & privacy note is in German, as I (Per Starke, the responsible person) am German, and it's therefore
-required by German Law. Contact me or use translation tools for an english version. 
+<div class="cs-legal" markdown="1">
 
-<hr>
+# 이용 안내 및 개인정보 처리방침
 
-#### Anbieter und Verantwortliche Person
-Per Starke, Willi-Lauf Allee 43, D-50858 Köln
+코드스토브 웹사이트를 이용하실 때 알아두시면 좋은 내용과, 방문자 정보가 어떻게 다루어지는지에 대한 안내입니다.
+{: .cs-legal__lead}
 
+## 사이트 운영자
 
-#### Kontakt
-Telefon: +49 160 93268817
-<br>
-e-Mail: per_at_starke-team.de
-<br>  
-  
-[Website](https://perstarke-webdev.de/)   
-[Blog](https://blog.perstarke-webdev.de/)
+이 웹사이트(codestove.io)는 **코드스토브(CodeStove)** 가 운영합니다.
 
-  
-## Datenschutzerklärung
+- 이메일: [info@codestove.io](mailto:info@codestove.io)
+- 전화: [010-2410-7483](tel:010-2410-7483)
+- 소재지: 대한민국 (IoT 측정기기 설치 서비스는 제주 지역에 한함)
 
-#### Geltungsbereich
-Diese Datenschutzerklärung klärt Nutzer über die Art, den Umfang und Zwecke der Erhebung und Verwendung personenbezogener Daten durch den vorstehend genannten Anbieter Per Starke auf dieser Website (im folgenden “Angebot”) auf.<br />
-<br />
-Die rechtlichen Grundlagen des Datenschutzes finden sich in der Datenschutzgrundverordnung (DSGVO), dem Bundesdatenschutzgesetz (BDSG) und dem Telemediengesetz (TMG).<br />
-<br />
+## 수집하는 정보
 
-#### Zugriffsdaten/ Server-Logfiles
-Der Webspace-Provider des Anbieters erhebt Daten über jeden Zugriff auf das Angebot (so genannte Serverlogfiles). Zu diesen Zugriffsdaten gehören:<br />
-<br />
-Name der abgerufenen Webseite, Datei, Datum und Uhrzeit des Abrufs, übertragene Datenmenge, Meldung über erfolgreichen Abruf, Browsertyp nebst Version, das Betriebssystem des Nutzers, Referrer URL (die zuvor besuchte Seite), IP-Adresse und der anfragende Provider.<br/>
-<br/>
-Der Anbieter verwendet diese Protokolldaten *nicht*!
+이 사이트는 회원 가입, 로그인, 게시판, 문의 폼 등 개인정보를 직접 입력받는 기능을 제공하지 않습니다.
 
-Der Anbieter behält sich jedoch vor, die Protokolldaten nachträglich zu überprüfen, wenn aufgrund konkreter Anhaltspunkte der berechtigte Verdacht einer rechtswidrigen Nutzung besteht.
+이메일이나 전화로 문의하실 때 알려주신 성함, 연락처, 문의 내용은 **답변과 상담 목적으로만** 사용하며, 관련 상담이 끝난 뒤에는 보관할 이유가 없어지는 시점에 삭제합니다.
 
-#### GitHub Pages und CDN-Nutzung:
+## 호스팅과 접속 기록
 
-Diese Website wird über [GitHub Pages](https://pages.github.com/) bereitgestellt, einem von GitHub, Inc. angebotenen Dienst, der es ermöglicht, Webseiteninhalte effizient und schnell weltweit zu verteilen. Die Verwendung von GitHub Pages integriert automatisch ein Content Delivery Network (CDN), um die Ladezeiten der Website zu optimieren und die Verfügbarkeit von Inhalten sicherzustellen.
+이 사이트는 GitHub, Inc.가 제공하는 **GitHub Pages**로 호스팅됩니다. 사이트에 접속하면 GitHub의 서버가 보안과 서비스 운영을 위해 접속 IP 주소 등 기술적인 접속 기록을 처리할 수 있습니다. 자세한 내용은 [GitHub 개인정보 처리방침](https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement)을 참고해 주세요. 코드스토브는 이 접속 기록을 열람하거나 별도로 보관하지 않습니다.
 
-Durch die Nutzung dieser Website erklären Sie sich damit einverstanden, dass einige Ihrer nicht-persönlichen Daten, wie die IP-Adresse und Informationen zur Seitennutzung, über das CDN übertragen werden können, um eine optimale Leistung der Website zu gewährleisten. Diese Datenübertragung erfolgt in Übereinstimmung mit den geltenden Datenschutzbestimmungen.
+## 외부 리소스(CDN)
 
-Wir respektieren Ihre Privatsphäre und ergreifen angemessene Maßnahmen, um Ihre persönlichen Informationen zu schützen. Bitte beachten Sie unsere Datenschutzerklärung für weitere Informationen darüber, wie wir mit Ihren Daten umgehen.
+페이지를 빠르게 표시하기 위해 아래 외부 서비스에서 글꼴과 스크립트를 불러옵니다. 이 과정에서 방문자의 브라우저가 해당 서비스에 직접 요청을 보내므로, IP 주소와 같은 기술 정보가 해당 서비스에 전달될 수 있습니다.
 
-Bei Fragen oder Anliegen zur Verwendung von GitHub Pages und des CDNs auf dieser Website können Sie sich gerne an uns wenden.
+- Pretendard 웹폰트: jsDelivr CDN
+- AOS 스크롤 애니메이션 라이브러리: cdnjs (Cloudflare)
 
-#### Kontaktaufnahme
-Bei der Kontaktaufnahme mit dem Anbieter (zum Beispiel per Kontaktformular oder E-Mail) werden die Angaben des Nutzers zwecks Bearbeitung der Anfrage sowie für den Fall, dass Anschlussfragen entstehen, gespeichert.
+Font Awesome 아이콘 글꼴은 이 사이트에서 직접 제공하며 외부로 전송되는 정보가 없습니다.
 
+## 쿠키와 분석 도구
 
-#### Kommentare und Beiträge
-Diese Site enthält keine Kommentarfunktion, Nutzer können daher keine Beiträge hinterlassen.
+이 사이트는 쿠키를 설정하지 않으며, 방문자 분석이나 광고 추적 도구를 사용하지 않습니다.
 
-#### Analyse, Tracking und Cookies
-Diese Seite verwendet kein Tracking, um Zugriffszahlen zu ermitteln.
-Es wird ein Cookie für die Dauer von einem Tag gesetzt, um die Zustimmung zur Verwendung der Website zu speichern, im Banner auf der Startseite, davon abgesehen verwenden wir keine Cookies.
+## 외부 링크
 
-#### Haftung für Links
-Unser Angebot enthält Links zu externen Webseiten Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich. Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße überprüft. Rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung nicht erkennbar.
+사이트에는 다른 회사나 기관의 웹사이트로 연결되는 링크가 포함될 수 있습니다. 링크된 사이트의 내용과 개인정보 처리에 대해서는 해당 운영자가 책임지며, 코드스토브는 이에 관여하지 않습니다.
 
-Eine permanente inhaltliche Kontrolle der verlinkten Seiten ist jedoch ohne konkrete Anhaltspunkte einer Rechtsverletzung nicht zumutbar. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Links umgehend entfernen.
+## 저작권
 
-### Urheberrecht
-Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers. Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet.
+이 사이트의 글, 이미지, 디자인 등 콘텐츠의 저작권은 별도 표시가 없는 한 코드스토브에 있습니다. 사전 동의 없이 상업적 목적으로 복제, 배포, 전송하는 것을 금합니다.
 
-Soweit die Inhalte auf dieser Seite nicht vom Betreiber erstellt wurden, werden die Urheberrechte Dritter beachtet. Insbesondere werden Inhalte Dritter als solche gekennzeichnet. Sollten Sie trotzdem auf eine Urheberrechtsverletzung aufmerksam werden, bitten wir um einen entsprechenden Hinweis. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Inhalte umgehend entfernen.
+## 문의
 
-#### Datenschutzerklärung für die Nutzung von FontAwesome
-Auf unseren Seiten verwenden wir grafische Symbole von FontAwesome,
-einem Visualisierungsdienst der Firma Font Awesome, Inc. Dieser Dienst
-erlaubt die Darstellung diverser Icon-Symbole auf unseren Seiten.
+이 안내에 대해 궁금한 점이 있으시면 [info@codestove.io](mailto:info@codestove.io)로 연락해 주세요.
 
-FontAwesome nutzt anonyme Zugriffsdaten, die in deren
-[privacy policy](https://fontawesome.com/privacy) spezifiziert sind.
+<p class="cs-legal__date">시행일: 2026년 10월 29일</p>
 
-Auf dieser Webseite wird FontAwesome allerdings lokal gehostet und somit keine Daten an FontAwesome weitergegeben.
-<br/>
-
-
-#### Widerruf, Änderungen, Berichtigungen und Aktualisierungen
-Der Nutzer hat das Recht, auf Antrag unentgeltlich Auskunft zu erhalten über die personenbezogenen Daten, die über ihn gespeichert wurden. Zusätzlich hat der Nutzer das Recht auf Berichtigung unrichtiger Daten, Sperrung und Löschung seiner personenbezogenen Daten, soweit dem keine gesetzliche Aufbewahrungspflicht entgegensteht.<br />
+</div>

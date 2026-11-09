@@ -1,5 +1,19 @@
 # 메인 페이지 "최근 프로젝트" 캐러셀. 내용은 _pages/portfolio.html 타임라인과 맞춰 유지.
 # category: iot | web | platform | marketing  (category-badge 색상과 동일)
+- title: "하하하 바이블 탐험 – 어린이 성경 어드벤처 앱 출시"
+  year: 2026
+  category: web
+  category_label: "웹/앱 개발"
+  icon: fa-book-bible
+  client: "CODESTOVE 자체 서비스"
+  summary: "어린 양 하양이와 창세기 26개 이야기를 걷고, 돕고, 고르며 경험하는 어린이 성경 게임. 손그림 원화·더빙·액션 게임, 광고 없음. iOS·Android 출시."
+- title: "NWBW – Apple Watch 트레일 러닝 내비게이션 출시"
+  year: 2026
+  category: web
+  category_label: "웹/앱 개발"
+  icon: fa-person-running
+  client: "CODESTOVE 자체 서비스"
+  summary: "GPX 코스를 등록하면 Apple Watch가 실시간으로 길을 안내하는 트레일 러닝 앱. 경로 이탈 알림, 고도 프로필, 심박·페이스 추적, iPhone 없이 독립 실행."
 - title: "소규모 사업장 대기오염방지시설 IoT 설치 지원사업 2차"
   year: 2025
   category: iot
